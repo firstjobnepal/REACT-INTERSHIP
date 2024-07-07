@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import { ThemeContext } from './context/ThemeContext';
+import ThemeToggleButton from './components/ThemeToggleButton';
+
+
 const RouterLink = () => {
-    return (
-        <div className='bg-black text-white py-4'>
-            <NavLink className="mx-4" to="/usestatetoggle">UseStateToggle</NavLink>
-            <NavLink className="mx-4" to="/readformdata">ReadFormData</NavLink>
-            <NavLink to="/">DisplayImg</NavLink>
+    const { theme } = useContext(ThemeContext);
+    return (<>
+        <div className={`bg-${theme === "black" ? "gray-700" : "blue-400"} relative text-white py-4`}>
+            <NavLink className="mx-4" to="/useStateToggle">UseStateToggle</NavLink>
+            <NavLink className="mx-4" to="/readFormData">ReadFormData</NavLink>
+            <NavLink className="mx-4" to="/displayImg">DisplayImg</NavLink>
+            <NavLink className="mx-4" to="/">countNumber</NavLink>
         </div>
+        <div className='absolute right-10 top-3'>
+            <ThemeToggleButton />
+        </div>
+    </>
     )
 }
 

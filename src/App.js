@@ -4,15 +4,23 @@ import RouterLink from './RouterLink'
 import ReadFormData from './tasks/ReadFormData'
 import UseStateToggle from './tasks/UseStateToggle'
 import DisplayImg from './tasks/DisplayImg'
+import UseEffectCountNum from './tasks/UseEffectCountNum'
+import { ThemeProvider } from './context/ThemeContext'
+
 const App = () => {
   return (
     <>
-      <RouterLink />
-      <Routes>
-        <Route path="/usestatetoggle" element={<UseStateToggle />} />
-        <Route path="/readformdata" element={<ReadFormData />} />
-        <Route path="/" element={<DisplayImg />} />
-      </Routes>
+      <div className='relative'>
+        <ThemeProvider>
+          <RouterLink />
+          <Routes className="bg-white-400 h-screen w-screen">
+            <Route path="/useStateToggle" element={<UseStateToggle />} />
+            <Route path="/readFormData" element={<ReadFormData />} />
+            <Route path="/displayImg" element={<DisplayImg />} />
+            <Route path='/' element={<UseEffectCountNum />} />
+          </Routes>
+        </ThemeProvider>
+      </div >
     </>
   )
 }
