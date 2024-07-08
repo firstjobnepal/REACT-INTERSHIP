@@ -11,7 +11,8 @@ const RouterLink = () => {
             <NavLink className="mx-4" to="/useStateToggle">UseStateToggle</NavLink>
             <NavLink className="mx-4" to="/readFormData">ReadFormData</NavLink>
             <NavLink className="mx-4" to="/displayImg">DisplayImg</NavLink>
-            <NavLink className="mx-4" to="/">countNumber</NavLink>
+            <NavLink className="mx-4" to="/countNumber">CountNumber</NavLink>
+            <NavLink to="/">SearchFilter</NavLink>
         </div>
         <div className='absolute right-10 top-3'>
             <ThemeToggleButton />

@@ -1,11 +1,12 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { ThemeProvider } from './context/ThemeContext'
 import RouterLink from './RouterLink'
 import ReadFormData from './tasks/ReadFormData'
 import UseStateToggle from './tasks/UseStateToggle'
 import DisplayImg from './tasks/DisplayImg'
 import UseEffectCountNum from './tasks/UseEffectCountNum'
-import { ThemeProvider } from './context/ThemeContext'
+import SearchFilter from './tasks/SearchFilter'
 
 const App = () => {
   return (
@@ -17,7 +18,8 @@ const App = () => {
             <Route path="/useStateToggle" element={<UseStateToggle />} />
             <Route path="/readFormData" element={<ReadFormData />} />
             <Route path="/displayImg" element={<DisplayImg />} />
-            <Route path='/' element={<UseEffectCountNum />} />
+            <Route path='/countNumber' element={<UseEffectCountNum />} />
+            <Route path="/" element={<SearchFilter />} />
           </Routes>
         </ThemeProvider>
       </div >
